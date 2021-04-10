@@ -7,19 +7,28 @@ class Counter extends Component {
      }
 
      
-    renderTags(){
-        if(this.state.tags.length === 0) return <p>no tags</p>
-        return <ul>{this.state.tags.map(tag => <li key={tag}>{tag}</li>)}</ul>
+    handleIncrement= () =>{
+        console.log('increment', this.state.count)
     
     }
     render() { 
       
         return (  
             <>
-            {this.state.tags.length === 0 && "create a new tag!"}
-         {this.renderTags()}
+           <span className={this.getbageClasses()}>{this.format()}</span>
+            <button onClick={this.handleIncrement} className="btn btn-danger">increment </button>
             </>
         );
+    }
+    getbageClasses() {
+        let classes = " badge m-2 badge-";
+        classes += this.state.count === 0 ? 'warning' : 'primary';
+        return classes;
+    }
+
+    format(){
+      const { count } =this.state
+      return count === 0 ? "zero" : count
     }
 
 }
