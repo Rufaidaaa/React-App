@@ -17,6 +17,9 @@ class Counter extends Component {
       console.log(this.props)
         return (  
             <>
+         {this.props.children}
+         {this.props.id}
+
            <span className={this.getbageClasses()}>{this.format()}</span>
             <button onClick={this.handleIncrement} className="btn btn-danger">increment </button>
             </>
