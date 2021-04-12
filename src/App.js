@@ -1,11 +1,11 @@
 // import logo from './logo.svg';
 import "./App.css";
 import { useState } from "react";
-import Counter from "./components/Counter";
+import Counters from "./components/Counters";
 function App(prop) {
   return (
     <>
-      <Counter />
+      <Counters />
     </>
   );
 }
